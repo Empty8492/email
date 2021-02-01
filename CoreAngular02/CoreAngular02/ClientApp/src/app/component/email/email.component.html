@@ -1,0 +1,12 @@
+<div style="width: 80%; margin:0px auto">
+  <table class="table table-bordered">
+    <tbody>
+      <tr *ngFor="let item of list">
+        <td><span>{{item.EID}}</span></td>
+        <td><span class="span-{{item.ID}}">{{item.January}}</span><input type="text" style="display: none;" id="January-{{item.ID}}"></td>
+     
+        <td><button (click)="Del(item.ID)" class="btn btn-danger">删除</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

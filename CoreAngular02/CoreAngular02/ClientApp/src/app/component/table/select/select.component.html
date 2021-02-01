@@ -1,0 +1,34 @@
+<div style="width: 79%; margin:20px auto">
+  <label style="font-size: 26px;">Search</label>
+  <input type="text" class="form-control" [(ngModel)]="search" (ngModelChange)='searchdata()'>
+</div>
+
+<div style="width: 80%; margin:0px auto">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <td>国家</td>
+        <td>一月</td>
+        <td>二月</td>
+        <td>三月</td>
+        <td>修改</td>
+        <td>删除</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of list">
+        <td><span>{{item.Name}}</span></td>
+        <td><span class="span-{{item.ID}}">{{item.January}}</span><input type="text" style="display: none;" id="January-{{item.ID}}"></td>
+        <td><span class="span-{{item.ID}}">{{item.February}}</span><input type="text" style="display: none;" id="February-{{item.ID}}"></td>
+        <td><span class="span-{{item.ID}}">{{item.March}}</span><input type="text" style="display: none;" id="March-{{item.ID}}"></td>
+        <td>
+          <!--<button (click)="UpdateHide(item.ID)" class="btn btn-danger but-{{item.ID}}" [disabled]="all">修改</button>-->
+          <a class="nav-link btn btn-danger but-{{item.ID}}" [routerLink]="['/table/update',item.ID]" routerLinkActive="active">update</a>
+          <button (click)="UpdateCancel(item.ID)" class="button-{{item.ID}} btn btn-danger" style="display: none;">取消</button>
+          <button (click)="Update(item.ID)" class="button-{{item.ID}} btn btn-danger" style="display: none;">确定</button>
+        </td>
+        <td><button (click)="Del(item.ID)" class="btn btn-danger">删除</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

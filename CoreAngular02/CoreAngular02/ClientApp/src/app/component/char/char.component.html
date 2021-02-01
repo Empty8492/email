@@ -1,0 +1,23 @@
+<div class="content">
+  <div class="left">
+
+    <!-- <div class="left-div" [routerLink]="['/char/line']" routerLinkActive="active" >line</div>
+
+    <div class="left-div" [routerLink]="['/char/pie']" routerLinkActive="active" >pie</div> -->
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link active " [routerLink]="['/char/line']" routerLinkActive="active">line</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/char/pie']" routerLinkActive="active">pie</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/char/column']" routerLinkActive="active">column</a>
+      </li>
+    </ul>
+
+  </div>
+  <div class="right">
+    <router-outlet></router-outlet>
+  </div>
+</div>
